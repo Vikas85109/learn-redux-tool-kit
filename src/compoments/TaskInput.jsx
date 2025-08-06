@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getArryData } from "../redux/reducers/TaskSlice";
 
-const TaskInput = ({ textInputArr,setTextInputArr }) => {
+const TaskInput = ({ textInputArr, setTextInputArr }) => {
+  const dispatch = useDispatch();
 
   const [textInput, setTextInput] = useState('');
   // const [textInputArr, setTextInputArr] = useState([]);
@@ -15,6 +18,7 @@ const TaskInput = ({ textInputArr,setTextInputArr }) => {
       alert("Enter Input");
       return
     }
+    dispatch(getArryData(...textInputArr, textInput))
     setTextInputArr([...textInputArr,textInput]);
     setTextInput('')
   }
