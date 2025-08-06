@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const TaskList = ({ textInputArr, handleDelete }) => {
+const TaskList = ({ textInputArr,handleDelete }) => {
   const [checkDone,setCheckDone]=useState(false)
 
   const handleDone = () => {

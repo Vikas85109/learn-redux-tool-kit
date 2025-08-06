@@ -9,12 +9,15 @@ export const TaskSlice = createSlice({
   initialState,
   reducers: {
     getArryData: (state, action) => {
-      state.getDataArr.push(action.payload)
+      state.getDataArr.push([action.payload])
+      },
+    getArryDataDelete: (state, action) => {
+      state.getDataArr = state.getDataArr.filter(item => item.id !== action.payload);
       },
    
   },
 })
 
-export const { getArryData } = TaskSlice.actions
+export const { getArryData, getArryDataDelete } = TaskSlice.actions
 
 export default TaskSlice.reducer
