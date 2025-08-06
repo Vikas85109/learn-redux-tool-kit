@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TaskInput from "./compoments/TaskInput";
 import TaskList from "./compoments/TaskList";
+import ButtonAdd from "./compoments/ButtonAdd";
 
 function App() {
 
@@ -13,13 +14,12 @@ function App() {
     setTextInputArr(filterData)
   }
 
-  console.log(908080,textInputArr)
-
-    
+  
 
   return (
     <>
       <TaskInput setTextInputArr={setTextInputArr} textInputArr={textInputArr} />
+      <ButtonAdd/>
       <TaskList textInputArr={textInputArr} handleDelete={handleDelete } />
     </>
   )
